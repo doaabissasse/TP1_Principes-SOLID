@@ -1,2 +1,5 @@
-package OC;public enum TypeCompte {
+package OC;
+
+public enum TypeCompte {
+    Courant, Epargne;
 }

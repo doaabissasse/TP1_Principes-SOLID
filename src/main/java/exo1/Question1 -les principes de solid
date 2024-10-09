@@ -1,0 +1,7 @@
+1.Principe de Responsabilité Unique:
+   La classe Facture a plusieurs responsabilités : gestion des produits,
+    calcul des totaux, impression et sauvegarde de la facture.
+
+2.Principe d'ouverture/fermeture:
+    qu'on veut changer la methode d'impression ou la sauvgarde la facture on doivent faire
+    l'ajout et pas la modification du code.

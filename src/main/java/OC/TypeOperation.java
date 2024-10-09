@@ -1,2 +1,5 @@
-package OC;public enum TypeOperation {
+package OC;
+
+public enum TypeOperation {
+    Debit, Credit;
 }
