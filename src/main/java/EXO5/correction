@@ -1,0 +1,40 @@
+1. Couplage élevé entre la classe Calendrier et la classe Personne n'est
+ pas nécessaire.
+ * Une solution simple pour réduire ce couplage est d'introduire une
+ interface qui définit un contrat commun. Cela permet de découpler Calendrier
+  de la classe spécifique Personne. Ainsi, Calendrier pourrait travailler avec
+  n'importe quelle classe qui implémente cette interface. Le concept d'interface
+   est un exemple du principe de substitution de Liskov (Liskov Substitution Principle)
+    du SOLID.
+
+2. *Non, l'interface IPersonne n'est plus complètement adaptée au besoin spécifique qui est maintenant
+de simplement envoyer un message d'anniversaire, sans la gestion de l'envoi d'emails ou de SMS.
+  Interface souhaitée
+  Une nouvelle interface:
+   plus adaptée devrait inclure les méthodes qui permettent d'obtenir
+  le nom et l'âge de la personne (calculé à partir de la date de naissance) et de lui envoyer un message pour son anniversaire.
+
+3.En comparant les interfaces IPersonne et IAmiFacebook, on observe les similitudes suivantes :
+ * Méthodes communes :
+  calculerAge()
+  getDateNaissance()
+  setDateNaissance(LocalDate d)
+
+  *Pour diminuer le couplage entre les interfaces IPersonne, IAmiFacebook,
+  et la classe Calendrier, nous pouvons extraire une interface commune qui regrouperait
+  les fonctionnalités communes aux deux interfaces, tout en laissant chaque interface
+  (Facebook et Personne) gérer ses spécificités.
+
+ ---- donc  les interfaces IPersonne, IAmiFacebook vont  hériter de cette interface
+ commune tout en conservant leurs méthodes spécifiques.
+
+ -----La classe Calendrier n'aura plus besoin de connaître directement les détails
+  spécifiques de IPersonne ou IAmiFacebook. Elle pourra utiliser l'interface commune
+  IIdentite pour gérer les anniversaires sans se soucier des spécificités de chaque type
+   de personne.  public void add(IIdentite identite) {
+                         // Ajoute la personne au calendrier
+                     }
+4.Le principe SOLID qui n'était pas respecté dans l'ancienne version
+ (utilisation de IPersonne dans Calendrier) est le principe d'inversion des dépendances
+ (Dependency Inversion Principle). Calendrier dépendait directement de la classe Personne,
+  une implémentation concrète, au lieu de dépendre d'une abstraction (interface).

@@ -1,0 +1,10 @@
+1.Les principes de SOLD non respecte:
+   principe de substitution de liskov:le probleme ici ,c'est l'heritage de
+   la classe ArrayList<Object>.ArrayList est une structure de donnee lineaire ,et on a
+   utiliser la classe pour stocker les matrices .
+   ****** donc l'usage de ArrayList n'est pas naturel pour représenter un tableau de Young
+
+2.les fautes qui existent dans le code :
+  * Dans le constructeur de la classe MatriceYoung, au lieu d'incrémenter i dans la boucle externe, tu incrémentes n
+  *dans la methode add(int key),il ya des probleme dans l'initialiser les variables left et top
+  *dans la methode add(int key), Il faut insérer dans [i][j] et non dans [i - 1][j] à la fin de la boucle.

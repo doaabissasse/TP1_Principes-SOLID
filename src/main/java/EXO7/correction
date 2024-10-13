@@ -1,0 +1,13 @@
+1. Nouveaux composants
+  Carillon manuel : Ce dispositif doit permettre à un employé de déclencher
+  manuellement une alerte via un carillon. Il doit également pouvoir envoyer un SMS
+   lorsqu'il est actionné.
+
+
+2.Inconvénients de cette architecture
+* Chaque nouveau composant sonore, qu'il soit fait maison ou propriétaire,
+nécessitera une nouvelle classe avec une logique d'alerte via SMS, ce qui complexifie le système.
+* Manque de flexibilité :
+
+  Si l'implémentation du système de notification change (par exemple, passer de SMS à
+   un autre système de notification), il faudrait modifier chaque classe individuellement.

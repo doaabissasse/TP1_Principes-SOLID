@@ -14,9 +14,11 @@ public class Main {
         facture.getTotal();
         facture.getTotalTTC();
 
+        //Impression de la facture
         ImpressionFacture impression =new ImpressionFactureImp();
         impression.Imprimerfacture(facture);
 
+        //sauvgarde dans une file
         sauvgardefactureFile file =new sauvgardefactureFile();
         file.saveFacture(facture);
 

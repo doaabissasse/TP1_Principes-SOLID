@@ -2,7 +2,7 @@ package EXO5;
 
 import java.time.LocalDate;
 
-public interface IAnniversaire {
+public interface IpersonneModifier {
     String getNom();
     LocalDate getDateNaissance();
     int calculerAge();
