@@ -1,32 +1,15 @@
 package OC;
 
-public class Operation {
-    private double montant;
-    private TypeOperation typeOperation;
+public abstract class Operation {
+	protected double montant;
 
-    public Operation(double montant, TypeOperation typeOperation) {
+    public Operation(double montant) {
         this.montant = montant;
-        this.typeOperation = typeOperation;
     }
 
     public double getMontant() {
         return montant;
     }
 
-    public void setMontant(double montant) {
-        this.montant = montant;
-    }
-
-    public TypeOperation getTypeOperation() {
-        return typeOperation;
-    }
-
-    @Override
-    public String toString() {
-        return "Operation{" +
-                "montant=" + montant +
-                ", typeOperation=" + typeOperation +
-                '}';
-    }
-
+    public abstract void execute(Compte compte);
 }
