@@ -5,11 +5,11 @@ public class CompteUniversitaireEtudiant {
     private String login;
 
     public CompteUniversitaireEtudiant(Etudiant etudiant) {
-        super();
         this.etudiant = etudiant;
+        this.login = new LoginGeneratorEtudiant(etudiant).genererLogin();
     }
-    public void genererLogin(){
-        String login = this.etudiant.getPrenom().charAt(0)+this.etudiant.getNom() + "usms.ac.ma";
-        this.login = login;
+    
+    public String getLogin() {
+        return login;
     }
 }
